@@ -9,6 +9,10 @@ class CarSerializer(serializers.ModelSerializer):
         model = Car
         fields = "__all__"
 
+        extra_kwargs = {
+            'creator': {'read_only': True}
+        }
+
     # add additional serializer for creation fo a car
 
 class CreateCarSerializer(serializers.ModelSerializer):
